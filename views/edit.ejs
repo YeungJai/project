@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <form action="/update" method="POST" enctype="multipart/form-data">
+            	Restaurant ID: <input name="restaurant_id" value=<%= restaurant.restaurant_id.toString() %>><br>
+		Restaurant Name: <input name="name" value=<%= restaurant.name.toString() %>><br>
+		Borough: <input name="borough" value=<%= restaurant.borough %> <br>
+		<br>Cuisine: <input name="cuisine" value=<%= restaurant.cuisine %> <br><br>
+            	<br>Photo<input type="file" name="filetoupload"><br>
+		<br>Photomimetype: <input name="photomimetype" value=<%= restaurant.photomimetype %> 
+		<br><br><br>Address
+		<br>Street: <input name="street" value=<%= restaurant.address.street %> <br>
+		<br>Building: <input name="building" value=<%= restaurant.address.building %> <br>
+		<br>Zipcode: <input name="zipcode" value=<%= restaurant.address.zipcode %> <br>
+		<br>Coord Lon: <input name="lon" value=<%= restaurant.address.coord.lon %> <br>
+		<br>Coord Lat: <input name="lat" value=<%= restaurant.address.coord.lat %> <br>
+		<br><br>Grades
+		<br>user: <input name="user" value=<%= restaurant.grades.user %> <br>
+		<br>score: <input name="score" value=<%= restaurant.grades.score %> <br>
+		<br>Owner:  <input name="owner" value=<%= restaurant.owner %> <br>
+            <input type="hidden" name="_id" value=<%= restaurant._id %>>
+            <input type="submit" value="update">  
+        </form>
+    </body>
+</html>

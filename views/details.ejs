@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <H2>Restaurant Details</H2><hr>
+        <p>Restaurant ID: <%= restaurant.restaurant_id %></p>
+        <p>Name: <%= restaurant.name %></p>
+	<p>Borough: <%= restaurant.borough %></p>
+	<p>Cuisine: <%= restaurant.cuisine %></p>
+	<p>Photo: 
+<%if(restaurant.photo){%>
+<img src="data: image/jpeg;base64,<%=restaurant.photo%>"  width="500" height="333">
+ <%}%>
+
+</p>
+
+	 
+	<p>Photomimetype: <%= restaurant.photomimetype %></p>
+	<dl>
+  	<dt>Address </dt>
+  	<dd>Street: <%= restaurant.address.street %></dd>
+  	<dd>Building: <%= restaurant.address.building %></dd>
+	<dd>Zipcode: <%= restaurant.address.zipcode %></dd>
+	<dd>Coord: <%= restaurant.address.coord.lon %></dd>
+	<dd>Coord: <%= restaurant.address.coord.lat %></dd>
+	<dt>grades</dt>
+	<dd>user: <%= restaurant.grades.user %></dd>
+	<dd>score: <%= restaurant.grades.score %></dd>
+	<p>Owner: <%= restaurant.owner %></p>
+	</dl>
+
+        
+	<a href="/leaflet?lat=<%= restaurant.address.coord.lat.toString() %>&lon=<%= restaurant.address.coord.lon.toString() %>&name=<%= restaurant  .name.toString() %>">map</a><br>
+        <a href="/edit?_id=<%= restaurant._id.toString() %>">edit</a><br>
+        <a href="/">home</a>
+    </body>
+</html>
